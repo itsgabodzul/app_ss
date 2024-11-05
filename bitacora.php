@@ -1,5 +1,6 @@
 <?php require "seguridad2.php";
 $usuario = $_SESSION['username'];
+$id_user = $_SESSION['id_user'];
 ?>
 <?php include "admin/cookie.php" ?>
 <!DOCTYPE html>
@@ -28,11 +29,23 @@ $usuario = $_SESSION['username'];
     </header>
     <main class="admin-main">
         <section class="dashboard-overview">
-            <h2>Resumen del Sistema</h2>
+            <h2>Resumen de tareas</h2>
             <div class="dashboard-widgets">
                 <div class="widget">
-                    <h3>Total de Alumnos</h3>
-                    <p>125</p> <!-- Este valor se puede obtener de la base de datos -->
+                <?php require "admin/conexion.php";
+                        $todos_datos = "SELECT * FROM tareas 
+                        INNER JOIN alumnos ON tareas.usuario = alumnos.id
+                        WHERE usuario = $id_user";
+                        $resultado = mysqli_query($conectar, $todos_datos);
+                        while ($fila = mysqli_fetch_assoc($resultado)){
+                        ?>
+                        <h3>Tarea: </h3>
+                        <?php echo $fila['nombre_tarea']; ?>
+                        <h3>Descripcion: </h3>
+                        <?php echo $fila['descripcion']; ?>
+                        <br><br>
+                        <a class="eliminar btn_ss" href="#" onClick="validar('eliminar_tarea.php?id=<?php echo $fila['id_tarea']; ?>')">Completar <i class="fas fa-check-circle"></i></a> <br><br><br>
+                        <?php }?>
                 </div>
                 <div class="widget">
                     <h3>Horas Activas</h3>

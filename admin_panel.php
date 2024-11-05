@@ -15,6 +15,7 @@ $id_user = $_SESSION['id_user'];
 </head>
 <body>
     <header class="admin-header">
+        <h1>¡Bienvenido <?php echo $usuario?>!</h1>
         <br>
         <nav class="admin-nav">
             <ul>
@@ -27,7 +28,6 @@ $id_user = $_SESSION['id_user'];
     </header>
     <main class="admin-main">
         <section class="dashboard-overview">
-            <h1>¡Bienvenido <?php echo $usuario?>!</h1>
             <h3 >Aqui tienes un resumen</h3>
             <div class="dashboard-widgets">
                 <div class="widget">
@@ -40,9 +40,10 @@ $id_user = $_SESSION['id_user'];
                         while ($fila = mysqli_fetch_assoc($resultado)){
                         ?>
                         <ul>
-                            <li><?php echo $fila['nombre_tarea']; ?></li> <a class="eliminar" href="#" onClick="validar('eliminar_tarea.php?id=<?php echo $fila['id_tarea']; ?>')"><i class="fas fa-check-circle"></i></a>
+                            <li><?php echo $fila['nombre_tarea']; ?></li>
                         </ul>
                         <?php }?>
+                        <a href="bitacora.php" class="btn_ss">Ver tareas</a>
                 </div>
                 <div class="widget">
                     <h3>Horas Activas</h3>

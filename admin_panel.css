@@ -107,3 +107,9 @@ body {
     color: var(--color1);
 
 }
+
+.btn_ss{
+    color: var(--color2);
+    text-decoration: none;
+    text-align: center;
+}
