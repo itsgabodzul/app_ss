@@ -14,7 +14,6 @@ $usuario = $_SESSION['username'];
 </head>
 <body>
     <header class="admin-header">
-        <h1>¡Bienvenido <?php echo $usuario?>!</h1>
         <br>
         <nav class="admin-nav">
             <ul>

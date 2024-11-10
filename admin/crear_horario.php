@@ -55,11 +55,45 @@ $id_admin = $_SESSION["id_admin"];
                             </div>
                             <div>
                                 <p class="text_input">Hora Inicio:</p>
-                                <input type="time" name="horario_inicio" placeholder="" required>
+                                <select name="horario_inicio" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                </select>
                             </div>
                             <div>
                                 <p class="text_input">Hora Fin:</p>
-                                <input type="time" name="horario_fin" placeholder="" required>
+                                <select name="horario_fin" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                </select>
                             </div>
                             <div>
                                 <p class="text_input">Clima:</p>

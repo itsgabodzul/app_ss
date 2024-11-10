@@ -22,12 +22,34 @@ body {
     padding: 20px;
     text-align: center;
 }
-
+.admin-nav{
+    width: 700px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 18px;
+}
+.noti{
+    margin: 5px;
+    font-size: 22px;
+}
+.salir{
+    font-size: 22px;
+}
 .admin-nav ul {
     list-style-type: none; /* Sin viñetas */
     padding: 0;
 }
-
+.logo-nav{
+    vertical-align: middle;
+    text-align: left;
+    height: 70px;
+    width: 700px;
+    display: inline-block;
+}
+.logo-nav img{
+    height: 100%;
+}
 .admin-nav ul li {
     display: inline; /* Elementos en línea */
     margin: 0 15px; /* Espaciado entre enlaces */
@@ -49,39 +71,112 @@ body {
 .dashboard-overview {
     margin-top: 20px;
 }
-
-.dashboard-widgets {
-    display: flex;
-    justify-content: space-around; /* Espacio entre widgets */
-    flex-wrap: wrap; /* Permitir que los widgets se ajusten */
+/* .dashboard-widgets{
+    border: red 1px solid;
+} */
+.widget_index1{
+    background-color: #fff; /* Color de fondo del widget */
+    padding: 25px 40px;
+    margin-left: 70px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra del widget */
+    width: 900px;
+    overflow: auto;
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
 }
-
+.widget_index{
+    background-color: #fff; /* Color de fondo del widget */
+    padding: 25px 40px;
+    margin-left: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra del widget */
+    width: 350px;
+    overflow: auto;
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
+}
+.pendientes{
+    margin-left: 30px;
+    margin-top: 5px;
+}
+.cont{
+    text-align: center;
+}
+.btn_ss2{
+    background-color: var(--color2);
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
 .widget {
     background-color: #fff; /* Color de fondo del widget */
-    border: 1px solid #ddd; /* Borde del widget */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 20px;
-    margin: 10px; /* Espaciado entre widgets */
+    padding: 25px 40px;
+    margin: auto;
+    border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra del widget */
-    flex: 1; /* Tomar el mismo espacio */
-    max-width: 300px; /* Máximo ancho del widget */
+    max-width: 80%;
+    overflow: auto;
+    height: 60vh;
 }
-
+.widget-tt{
+    background-color: #999999;
+    border-radius: 10px 10px 0 0;
+    padding: 1px;
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+.widget-tt a{
+    border-radius: 10px 10px 0 0;
+    padding: 3px 80px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.position{
+    background-color: #fff;
+}
+.tt_paginas{
+    padding: 5px 25px;
+    font-size: 32px;
+}
+.st_paginas{
+    padding: 0 25px;
+    font-size: 22px;
+    font-weight: 500;
+}
+.registro_horas{
+    width: 1300px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+.registro_horas button{
+    background-color: var(--color2);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+}
 .widget h3 {
     margin: 0 0 10px; /* Margen inferior */
 }
-
-.widget p {
-    font-size: 24px; /* Tamaño de texto para los valores */
-    color: var(--color2); /* Color del texto */
+.asistencias{
+    font-weight: 500;
+    display: inline-block;
 }
 
 .selected {
     border-bottom: #fff 2px solid;
-}
-.widget i{
-    color: var(--color2);
-    font-size: 24px;
 }
 .widget button{
     color: white;
@@ -107,9 +202,17 @@ body {
     color: var(--color1);
 
 }
+.noti i{
+    color: #c90;
+}
 
 .btn_ss{
-    color: var(--color2);
+    background-color: green;
+    color: white;
+    padding: 5px;
     text-decoration: none;
+    border-radius: 10px;
     text-align: center;
+    font-weight: bold;
+    font-size: 16px;
 }

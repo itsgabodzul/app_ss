@@ -31,7 +31,7 @@ $id_admin = $_SESSION["id_admin"];
                         $fila = $resultado->fetch_array();
                 ?>
                 <div class="cont_info">
-                <a href="usuarios.php" class="btn">Regresar</a>
+                <a href="principal.php" class="btn">Regresar</a>
                 </div>
                      <div class="campos">
                         <form action="guardar_usuaio_editar.php" method="post">
