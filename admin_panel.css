@@ -216,3 +216,14 @@ body {
     font-weight: bold;
     font-size: 16px;
 }
+.tabla_horarios{
+    /* border: 1px black solid; */
+}
+.table_tt{
+    background-color: var(--color1);
+    color: white;
+    width: 140px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+}

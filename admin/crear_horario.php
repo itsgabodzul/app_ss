@@ -54,6 +54,17 @@ $id_admin = $_SESSION["id_admin"];
                                 </select>
                             </div>
                             <div>
+                                <p class="text_input">Día:</p>
+                                <select  name="dia">
+                                    <option value="">Seleccione</option>
+                                    <option value="lunes">Lunes</option>
+                                    <option value="martes">Martes</option>
+                                    <option value="miercoles">Miércoles</option>
+                                    <option value="jueves">Jueves</option>
+                                    <option value="viernes">Viernes</option>
+                                </select>
+                            </div>
+                            <div>
                                 <p class="text_input">Hora Inicio:</p>
                                 <select name="horario_inicio" required>
                                     <option value="">Seleccione</option>
