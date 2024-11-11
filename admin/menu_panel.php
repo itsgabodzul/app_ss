@@ -6,7 +6,7 @@
     <span class="usuario">¡Bienvenido <a href="ver_usuario.php"><?php echo $usuario?></a>!</span><br><br>
     <p class="vinculos">
         <a href="principal.php"><i class="fas fa-home"></i> - Inicio</a><br>
-        <a href="salones.php"><i class="fas fa-hotel"></i> - Aulas</a><br>
+        <a href="salones.php"><i class="fas fa-clock"></i> - Horarios</a><br>
         <a href="docentes.php"><i class="fas fa-chalkboard-teacher"></i> - Docentes</a><br>
         <a href="usuarios2.php"><i class="fas fa-users"></i> - Alumnos</a><br>
         <a href="tareas_p.php"><i class="fas fa-tasks"></i> - Tareas</a><br>

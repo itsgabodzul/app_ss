@@ -32,7 +32,7 @@ if (mysqli_num_rows($resultado) > 0) {
 else {
   echo '
   <script>
-    location.href = "login_admin.php?errorusuario=SI";
+    location.href = "index.php?errorusuario=SI";
   </script>
  ';
 }

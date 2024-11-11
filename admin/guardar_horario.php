@@ -32,8 +32,9 @@ if (mysqli_num_rows($verificar_maestro) > 0) {
 if ($n > 1){
   $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '$clima', '$hora_inicio')";
   $query = mysqli_query($conectar, $insertar);
+  $horas = $hora_inicio;
   for ($i = 1; $i < $n; $i++){
-    $horas = ($hora_inicio+1);
+    $horas = ($horas+1);
     $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '$clima', '$horas')";
     $query = mysqli_query($conectar, $insertar);
   }

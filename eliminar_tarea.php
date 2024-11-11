@@ -11,13 +11,13 @@ if ($resultado) {
     echo '
     <script>
         alert("Se completo la tarea");
-        location.href = "admin_panel.php";
+        location.href = "bitacorat.php";
     </script>';
 } else {
     echo '
     <script>
         alert("Error");
-        location.href = "admin_panel.php";
+        location.href = "bitacorat.php";
     </script>';
 }
 ?>

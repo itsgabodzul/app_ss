@@ -277,3 +277,12 @@ a[disabled] {
     pointer-events: none;
     display: none;
   }
+  .bs_docente{
+    border: red solid;
+}
+.bs_docentes{
+    border: green solid;
+}
+.buscar{
+    border: red solid;
+}

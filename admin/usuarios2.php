@@ -29,12 +29,12 @@ $id_admin = $_SESSION["id_admin"];
                             <th>NOMBRES</th>
                             <th>APELLIDOS</th>
                             <th>EMAIL</th>
-                            <th>VER</th>
+                            <th colspan="2"></th>
                             <!-- <th>EDITAR</th>
                             <th>ELIMINAR</th> -->
                         </tr>
                         <?php require "conexion.php";
-                        $todos_datos = "SELECT * FROM alumnos ORDER BY id ASC";
+                        $todos_datos = "SELECT * FROM alumnos WHERE id > 1 ORDER BY id ASC";
                         $resultado = mysqli_query($conectar, $todos_datos);
 
                         while ($fila = mysqli_fetch_assoc($resultado)){
@@ -48,7 +48,7 @@ $id_admin = $_SESSION["id_admin"];
                                 <td><?php echo $fila['email']; ?></td>
                                 <td><a class="ver_u" href="ver_alumno.php?id=<?php echo $fila['id']; ?>"><i class="fas fa-eye"></i></a></td>
                                 <!-- <td><a class="editar" href="editar_usuario.php?id=<?php echo $fila['id']; ?>"><i class="fas fa-spell-check"></i></a></td> -->
-                                <!-- <td><a class="eliminar" href="#" onClick="validar('eliminar_usuario.php?id=<?php echo $fila['id']; ?>')"><i class="fas fa-trash-alt"></i></a></td> -->
+                                <td><a class="eliminar" href="#" onClick="validar('eliminar_usuario2.php?id=<?php echo $fila['id']; ?>')"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
                         <?php }?>
                     </table>

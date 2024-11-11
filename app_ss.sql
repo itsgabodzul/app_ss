@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2024 a las 21:21:40
+-- Tiempo de generación: 11-11-2024 a las 01:29:12
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -46,7 +46,6 @@ CREATE TABLE `alumnos` (
 
 INSERT INTO `alumnos` (`id`, `nombres`, `apellidos`, `email`, `contrasena`, `matricula`, `carrera`, `sexo`, `ingreso`, `rol`) VALUES
 (1, 'Todos', NULL, NULL, NULL, NULL, '', '', 0, ''),
-(3, 'Gabo', 'Dzul', 'LE20080928@merida.tecnm.mx', '$2y$10$guWfh72ZjhlPClfJnKpHTOxgcB8IHUT0IlybKaU4aePlEHaBldhlm', '2024-09-0', '', '', 0, ''),
 (8, 'Jonathan', 'Heredia Cardenas', 'LE20080123@merida.tecnm.mx', '$2y$10$7H4BHxdv65hSh.JlN27hKumO6LAKus4qJpJUgQ5sxYBct0AhDVfFy', 'E20080123', 'Ingenieria en Sistemas Computacionales', 'masculino', 9, 'estudiante'),
 (9, 'Juan', 'Carrillo Torres', 'LE20080895@merida.tecnm.mx', '$2y$10$pvVLLZJ4DtCQ9Z3mkH7q1uCwZ2aos0hJ1QLofUxcEJV6gYtfYJLIG', 'E20080895', 'Ing Ambiental', 'masculino', 9, 'estudiante'),
 (10, 'Aldo', 'Espadas', 'LE20080485@merida.tecnm.mx', '$2y$10$5ha6A3zDW6TX10cBUeXOFef/cJ6SbAAffSD.JX4L3s7RfJi6/HObG', 'E80200485', 'Ingenieria en Sistemas Computacionales', 'masculino', 11, 'estudiante'),
@@ -147,9 +146,14 @@ CREATE TABLE `lunes` (
 --
 
 INSERT INTO `lunes` (`id`, `aula`, `maestro`, `clima`, `hora`) VALUES
-(1, 1, 1, 'Encendido', 8),
 (2, 2, 4, 'Apagado', 14),
-(3, 2, 4, 'Apagado', 15);
+(3, 2, 4, 'Apagado', 15),
+(4, 10, 5, 'Apagado', 13),
+(5, 10, 5, 'Apagado', 14),
+(6, 10, 5, 'Apagado', 14),
+(7, 5, 1, 'Apagado', 16),
+(8, 5, 1, 'Apagado', 17),
+(9, 5, 1, 'Apagado', 18);
 
 -- --------------------------------------------------------
 
@@ -206,13 +210,9 @@ CREATE TABLE `tareas` (
 --
 
 INSERT INTO `tareas` (`id_tarea`, `nombre_tarea`, `descripcion`, `estado`, `usuario`) VALUES
-(2, 'Prueba', 'Hacer la prueba', 'Activa', 3),
-(5, 'Prueba3a', 'assa', 'Activa', 3),
 (6, 'Prueba3aa', 'asdasdad', 'Activa', 9),
 (7, 'Traer comida', 'Ir a comprar en la caferteria la comida de la maestra', 'Activa', 8),
 (10, 'Reparar Xampp', 'Reparar el instaldor del xampp', 'Activa', 9),
-(12, 'Reparar Xampp', 'Repara la base de datis del camo en ala comuafoa fe lads coqy estan en la cuesuin e de alis df jsiie alloas osteja ye addioaosa aoo', 'Activa', 8),
-(13, 'Prueba3a', 'assdad usa e ai sdda hoa como eas bieniebaid a aois', 'Activa', 8),
 (16, 'Todos', 'asdfsbgnhas', 'Activa', 1);
 
 -- --------------------------------------------------------
@@ -360,7 +360,7 @@ ALTER TABLE `jueves`
 -- AUTO_INCREMENT de la tabla `lunes`
 --
 ALTER TABLE `lunes`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `martes`

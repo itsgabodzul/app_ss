@@ -14,38 +14,38 @@ $usuario = $_SESSION['username'];
 </head>
 <body>
     <header class="admin-header">
-        <br>
+        <div class="logo-nav">
+            <img src="img/Fondo.png" alt="">
+        </div>
         <nav class="admin-nav">
             <ul>
                 <li><a href="admin_panel.php">Inicio</a></li>
-                <!-- <li><a href="gestionar_alumnos.php">Gestión de Alumnos</a></li> -->
-                <li><a href="bitacora.php">Bitácora</a></li>
+                <li><a href="bitacorat.php">Bitácora</a></li>
                 <li><a href="horas_asistencias.php" class="selected">Horas y Asistencias</a></li>
-                <li><a href="salir.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                <li><a href="" class="noti"><i class="fas fa-bell"></i></a></li>
+                <li><a href="salir.php" class="salir"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </nav>
     </header>
     <main class="admin-main">
         <section class="dashboard-overview">
-            <h2>Resumen del Sistema</h2>
+            <h1 class="tt_paginas">Registro de Asistencia al Servicio Social</h1>
+            <br>
             <div class="dashboard-widgets">
-                <div class="widget">
-                    <h3>Total de Alumnos</h3>
-                    <p>125</p> <!-- Este valor se puede obtener de la base de datos -->
+                <div class="widget_index1">
+                    <form action="">
+                        <button>Iniciar</button>
+                    </form>
+                    <form action="">
+                        <button>Detener</button>
+                    </form>
                 </div>
-                <div class="widget">
-                    <h3>Horas Activas</h3>
-                    <p id="tiempo_real"><i class="far fa-clock"></i> 00:00:00</p> 
-                    <br>
-                    <button>Iniciar</button> <button>Detener</button>
-                </div>
-                <div class="widget">
-                    <h3><i class="fas fa-bell"></i> Alertas</h3>
-                    <ul>
-                        <li>Alerta 1 <div class="chek"><i class="fas fa-check-circle"></i></i><i class="fas fa-times-circle"></i></div></li>
-                        <li>Alerta 2 <div class="chek"><i class="fas fa-check-circle"></i></i><i class="fas fa-times-circle"></i></div></li>
-                        <li>Alerta 3 <div class="chek"><i class="fas fa-check-circle"></i></i><i class="fas fa-times-circle"></i></div></li>
-                    </ul>
+                <div class="widget_index">
+                    <h3>Horas Totales:</h3><br>
+                    <p class="horas">08:00</p>
+                    <br><br>
+                    <h3>Horas Acumuladas</h3><br>
+                    <p class="horas">09:00</p>
                 </div>
             </div>
         </section>

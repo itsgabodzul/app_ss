@@ -21,7 +21,7 @@ $id_user = $_SESSION['id_user'];
         <nav class="admin-nav">
             <ul>
                 <li><a href="admin_panel.php">Inicio</a></li>
-                <li><a href="bitacora.php" class="selected">Bitácora</a></li>
+                <li><a href="bitacorat.php" class="selected">Bitácora</a></li>
                 <li><a href="horas_asistencias.php">Horas y Asistencias</a></li>
                 <li><a href="" class="noti"><i class="fas fa-bell"></i></a></li>
                 <li><a href="salir.php" class="salir"><i class="fas fa-sign-out-alt"></i></a></li>
@@ -55,7 +55,7 @@ $id_user = $_SESSION['id_user'];
                             ?>
                         <tr>
                             <th class="table_tt">Aula / Horario</th>
-                            <?php for ($i=6; $i<=21; $i++){?>
+                            <?php for ($i=6; $i<21; $i++){?>
                             <th class="table_tt"><?php echo $i + 1; ?></th>
                             <?php }?>
                         </tr>
@@ -67,7 +67,7 @@ $id_user = $_SESSION['id_user'];
                                 <tr>
                                     <td class="table_tt"><?php echo $fila_aula['aula']; ?></td>
                                     <?php 
-                                        for ($i = 6; $i <= 21; $i++) {
+                                        for ($i = 6; $i < 21; $i++) {
                                             if ($dia_semana == "domingo" || $dia_semana == "sabado") {
                                                 echo "<td></td>";
                                             } else {
@@ -78,13 +78,22 @@ $id_user = $_SESSION['id_user'];
                                                 WHERE hora = $hora AND aula = $aula";
                                                 $resultado_maestros = mysqli_query($conectar, $todos_maestros);
                                             }
-                                            if ($resultado_maestros && $fila_horario = mysqli_fetch_assoc($resultado_maestros)) {
-                                                echo "<td>" . $fila_horario["nombres"] . "</td>";
-                                            } else {
+                                            if ($resultado_maestros && $fila_horario = mysqli_fetch_assoc($resultado_maestros)) { ?>
+                                                <td class="seleccion"> <?php echo $fila_horario["nombres"]?></td>
+                                            <?php  } else {
                                                 echo "<td></td>";
                                             }
                                         }
                                         ?>
+                                        <td class="funcion">
+                                            <form action="" class="abierto">
+                                                <button>Cerrar</button>
+                                            </form>
+                                            <br>
+                                            <form action="" class="cerrado">
+                                                <button>Abrir</button>
+                                            </form><br>
+                                        </td>
                                 </tr>
                             <?php
                             } ?>
