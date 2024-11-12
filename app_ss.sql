@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2024 a las 00:53:28
+-- Tiempo de generación: 12-11-2024 a las 05:41:52
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -65,6 +65,14 @@ CREATE TABLE `asistencias` (
   `hora_fin` varchar(255) DEFAULT NULL,
   `acumuldas` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `asistencias`
+--
+
+INSERT INTO `asistencias` (`id_asistencia`, `alumno`, `fecha`, `hora_inicio`, `hora_fin`, `acumuldas`) VALUES
+(1, 8, ' 11-noviembre-2024', ' 21:21', '21:42', 0),
+(2, 8, ' 11-noviembre-2024', ' 21:49', '21:59', 0);
 
 -- --------------------------------------------------------
 
@@ -228,7 +236,7 @@ CREATE TABLE `tareas` (
 --
 
 INSERT INTO `tareas` (`id_tarea`, `nombre_tarea`, `descripcion`, `estado`, `usuario`) VALUES
-(6, 'Prueba3aa', 'asdasdad', 'Activa', 9),
+(6, 'PruebaNuevo', 'asdasdad', 'Activa', 9),
 (7, 'Traer comida', 'Ir a comprar en la caferteria la comida de la maestra', 'Activa', 8),
 (10, 'Reparar Xampp', 'Reparar el instaldor del xampp', 'Activa', 9),
 (16, 'Todos', 'asdfsbgnhas', 'Activa', 1);
@@ -285,7 +293,8 @@ ALTER TABLE `alumnos`
 -- Indices de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  ADD PRIMARY KEY (`id_asistencia`);
+  ADD PRIMARY KEY (`id_asistencia`),
+  ADD KEY `asistencia-alumno` (`alumno`);
 
 --
 -- Indices de la tabla `aulas`
@@ -366,7 +375,7 @@ ALTER TABLE `alumnos`
 -- AUTO_INCREMENT de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  MODIFY `id_asistencia` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_asistencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `aulas`
@@ -425,6 +434,12 @@ ALTER TABLE `viernes`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `asistencias`
+--
+ALTER TABLE `asistencias`
+  ADD CONSTRAINT `asistencia-alumno` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `jueves`
