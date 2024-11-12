@@ -75,7 +75,7 @@ $id_admin = $_SESSION["id_admin"];
                                 <td><?php echo $fila['estado']; ?></td>
                                 <td><?php echo $fila['nombres']; ?></td>
                                 <!-- <td><a class="ver_u" href="ver_usuario.php?id=<?php echo $fila['id']; ?>"><i class="fas fa-eye"></i></a></td> -->
-                                <td><a class="editar" href="editar_usuario.php?id=<?php echo $fila['id']; ?>"><i class="fas fa-spell-check"></i></a></td>
+                                <td><a class="editar" href="editar_tarea.php?id=<?php echo $fila['id_tarea']; ?>"><i class="fas fa-spell-check"></i></a></td>
                                 <td><a class="eliminar" href="#" onClick="validar('eliminar_tarea.php?id=<?php echo $fila['id_tarea']; ?>')"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
                         <?php }?>

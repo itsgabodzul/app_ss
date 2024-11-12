@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2024 a las 01:29:12
+-- Tiempo de generación: 12-11-2024 a las 00:53:28
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -54,42 +54,58 @@ INSERT INTO `alumnos` (`id`, `nombres`, `apellidos`, `email`, `contrasena`, `mat
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `asistencias`
+--
+
+CREATE TABLE `asistencias` (
+  `id_asistencia` int(5) NOT NULL,
+  `alumno` int(5) NOT NULL,
+  `fecha` varchar(255) DEFAULT NULL,
+  `hora_inicio` varchar(255) DEFAULT NULL,
+  `hora_fin` varchar(255) DEFAULT NULL,
+  `acumuldas` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `aulas`
 --
 
 CREATE TABLE `aulas` (
   `id_aula` int(5) NOT NULL,
   `aula` varchar(5) DEFAULT NULL,
-  `tipo` varchar(50) DEFAULT NULL
+  `tipo` varchar(50) DEFAULT NULL,
+  `estado` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `aulas`
 --
 
-INSERT INTO `aulas` (`id_aula`, `aula`, `tipo`) VALUES
-(1, 'H1', 'Laboratorio'),
-(2, 'H2', 'Laboratorio'),
-(3, 'H3', 'Salon'),
-(4, 'H4', 'Salon'),
-(5, 'H5', 'Salon'),
-(6, 'H6', 'Salon'),
-(7, 'H7', 'Laboratotrio'),
-(8, 'H8', 'Laboratorio'),
-(9, 'H9', 'Salon'),
-(10, 'H10', 'Salon'),
-(11, 'H11', 'Salon'),
-(12, 'H12', 'Salon'),
-(13, 'G1', 'Salon'),
-(14, 'G2', 'Salon'),
-(15, 'G3', 'Salon'),
-(16, 'G4', 'Laboratotrio'),
-(17, 'G5', 'Salon'),
-(18, 'G6', 'Salon'),
-(19, 'G7', 'Salon'),
-(20, 'G8', 'Laboratotrio'),
-(21, 'LCOM3', 'Laboratotrio'),
-(22, 'LCOM4', 'Laboratorio');
+INSERT INTO `aulas` (`id_aula`, `aula`, `tipo`, `estado`) VALUES
+(1, 'H1', 'Laboratorio', 'cerrado'),
+(2, 'H2', 'Laboratorio', NULL),
+(3, 'H3', 'Salon', NULL),
+(4, 'H4', 'Salon', NULL),
+(5, 'H5', 'Salon', NULL),
+(6, 'H6', 'Salon', NULL),
+(7, 'H7', 'Laboratotrio', NULL),
+(8, 'H8', 'Laboratorio', NULL),
+(9, 'H9', 'Salon', NULL),
+(10, 'H10', 'Salon', 'cerrado'),
+(11, 'H11', 'Salon', NULL),
+(12, 'H12', 'Salon', 'cerrado'),
+(13, 'G1', 'Salon', NULL),
+(14, 'G2', 'Salon', NULL),
+(15, 'G3', 'Salon', NULL),
+(16, 'G4', 'Laboratotrio', NULL),
+(17, 'G5', 'Salon', NULL),
+(18, 'G6', 'Salon', NULL),
+(19, 'G7', 'Salon', NULL),
+(20, 'G8', 'Laboratotrio', NULL),
+(21, 'LCOM3', 'Laboratotrio', NULL),
+(22, 'LCOM4', 'Laboratorio', NULL);
 
 -- --------------------------------------------------------
 
@@ -153,7 +169,9 @@ INSERT INTO `lunes` (`id`, `aula`, `maestro`, `clima`, `hora`) VALUES
 (6, 10, 5, 'Apagado', 14),
 (7, 5, 1, 'Apagado', 16),
 (8, 5, 1, 'Apagado', 17),
-(9, 5, 1, 'Apagado', 18);
+(9, 5, 1, 'Apagado', 18),
+(10, 14, 5, 'Encendido', 19),
+(11, 14, 5, 'Encendido', 20);
 
 -- --------------------------------------------------------
 
@@ -264,6 +282,12 @@ ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `asistencias`
+--
+ALTER TABLE `asistencias`
+  ADD PRIMARY KEY (`id_asistencia`);
+
+--
 -- Indices de la tabla `aulas`
 --
 ALTER TABLE `aulas`
@@ -339,6 +363,12 @@ ALTER TABLE `alumnos`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT de la tabla `asistencias`
+--
+ALTER TABLE `asistencias`
+  MODIFY `id_asistencia` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `aulas`
 --
 ALTER TABLE `aulas`
@@ -360,7 +390,7 @@ ALTER TABLE `jueves`
 -- AUTO_INCREMENT de la tabla `lunes`
 --
 ALTER TABLE `lunes`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `martes`

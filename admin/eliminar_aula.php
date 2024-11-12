@@ -11,8 +11,8 @@ date_default_timezone_set('America/Mexico_City');
     'Friday' => 'viernes',
     'Saturday' => 'sabado',
     'Sunday' => 'domingo');
-    $dia_semana = 'lunes';
-    // $dia_semana = $dia_semana_ingles[date("l")];
+    // $dia_semana = 'lunes';
+    $dia_semana = $dia_semana_ingles[date("l")];
 
 
 $eliminar = "DELETE FROM $dia_semana WHERE id='$id'";

@@ -50,8 +50,8 @@ $id_user = $_SESSION['id_user'];
                                 'Saturday' => 'sabado',
                                 'Sunday' => 'domingo'
                             );
-                            $dia_semana = 'lunes';
-                            // $dia_semana = $dia_semana_ingles[date("l")];
+                            // $dia_semana = 'lunes';
+                            $dia_semana = $dia_semana_ingles[date("l")];
                             ?>
                         <tr>
                             <th class="table_tt">Aula / Horario</th>
@@ -79,20 +79,37 @@ $id_user = $_SESSION['id_user'];
                                                 $resultado_maestros = mysqli_query($conectar, $todos_maestros);
                                             }
                                             if ($resultado_maestros && $fila_horario = mysqli_fetch_assoc($resultado_maestros)) { ?>
-                                                <td class="seleccion"> <?php echo $fila_horario["nombres"]?></td>
+                                                <td class="seleccion"> <?php echo $fila_horario["nombres"] ?></td>
                                             <?php  } else {
                                                 echo "<td></td>";
                                             }
                                         }
                                         ?>
                                         <td class="funcion">
-                                            <form action="" class="abierto">
-                                                <button>Cerrar</button>
-                                            </form>
-                                            <br>
-                                            <form action="" class="cerrado">
-                                                <button>Abrir</button>
-                                            </form><br>
+                                            <?php
+                                            $aula_c = $fila_aula["aula"];
+                                            $todos_actualizar = "SELECT * FROM aulas WHERE aula = '$aula_c'";
+                                            $resultado_actualizar = mysqli_query($conectar, $todos_actualizar);
+                                            $fila_actualizar = mysqli_fetch_assoc($resultado_actualizar);
+                                            $estado = $fila_actualizar["estado"];
+                                            if ($estado == "abierto" || $estado == ""){
+                                            ?>
+                                                <form action="actualizar_estado.php" method="post" class="abierto">
+                                                    <input type="hidden" name="id_aula" value="<?php echo $fila_actualizar["id_aula"]?>">
+                                                    <input type="hidden" name="aula" value="<?php echo $fila_actualizar["aula"]?>">
+                                                    <input type="hidden" name="tipo" value="<?php echo $fila_actualizar["tipo"]?>">
+                                                    <input type="hidden" name="estado" value="cerrado">
+                                                    <button type="submit">Cerrar el <?php echo $fila_actualizar["aula"]?></button>
+                                                </form>
+                                            <?php } else {?>
+                                                <form action="actualizar_estado.php " class="cerrado">
+                                                    <input type="hidden" name="id_aula" value="<?php echo $fila_actualizar["id_aula"]?>">
+                                                    <input type="hidden" name="aula" value="<?php echo $fila_actualizar["aula"]?>">
+                                                    <input type="hidden" name="tipo" value="<?php echo $fila_actualizar["tipo"]?>">
+                                                    <input type="hidden" name="estado" value="abierto">
+                                                    <button type="submit">Abrir el <?php echo $fila_actualizar["aula"] ?></button>
+                                                </form>
+                                            <?php }?>
                                         </td>
                                 </tr>
                             <?php

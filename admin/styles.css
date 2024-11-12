@@ -277,12 +277,17 @@ a[disabled] {
     pointer-events: none;
     display: none;
   }
-  .bs_docente{
-    border: red solid;
-}
 .bs_docentes{
-    border: green solid;
+    width: 50%;
 }
 .buscar{
-    border: red solid;
+    text-align: center;
+    font-weight: bold;
+}
+.buscar button{
+    width: 20%;
+    background-color: var(--color1);
+    color: white;
+    font-weight: bold;
+    border: none;
 }

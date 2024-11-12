@@ -128,7 +128,7 @@ body {
     padding: 1px;
     margin: auto;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
+    max-width: 90%;
 }
 .widget-tt a{
     border-radius: 10px 10px 0 0;
@@ -158,14 +158,6 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 10px;
-}
-.registro_horas button{
-    background-color: var(--color2);
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 500;
 }
 .funcion{
     background-color: white;
@@ -234,4 +226,52 @@ body {
 .tabla_horarios {
     background-color: rgb(180, 180, 180);
     text-align: center;
+}
+
+.abierto button{
+    background-color: red;
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+.cerrado button{
+    background-color: green;
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+.tablaspanel{
+    margin: auto;
+    font-size: 16px;
+    text-align: center;
+}
+.tablaspanel td{
+    border: black 3px solid;
+    padding: 5px;
+}
+.tablaspanel th{
+    background-color: var(--color1);
+    color: #fff;
+    padding: 10px;
+}
+.fecha{
+    width: 400px;
+}
+.horass{
+    width: 150px;
+}
+.contador{
+    display: inline-block;
+}
+.contador button{
+    background-color: var(--color2);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+}
+.horas{
+    color: var(--color1);
+    font-weight: bold;
+    font-size: 45px;
 }
