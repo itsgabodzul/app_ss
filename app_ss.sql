@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2024 a las 05:41:52
+-- Tiempo de generación: 18-11-2024 a las 01:27:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -63,7 +63,7 @@ CREATE TABLE `asistencias` (
   `fecha` varchar(255) DEFAULT NULL,
   `hora_inicio` varchar(255) DEFAULT NULL,
   `hora_fin` varchar(255) DEFAULT NULL,
-  `acumuldas` int(10) NOT NULL
+  `acumuldas` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -71,8 +71,15 @@ CREATE TABLE `asistencias` (
 --
 
 INSERT INTO `asistencias` (`id_asistencia`, `alumno`, `fecha`, `hora_inicio`, `hora_fin`, `acumuldas`) VALUES
-(1, 8, ' 11-noviembre-2024', ' 21:21', '21:42', 0),
-(2, 8, ' 11-noviembre-2024', ' 21:49', '21:59', 0);
+(1, 8, ' 11-noviembre-2024', ' 21:21', '21:42', 0.35),
+(2, 8, ' 11-noviembre-2024', ' 21:49', '21:59', 0.1667),
+(3, 8, ' 12-noviembre-2024', ' 14:14', '14:14', 0.0167),
+(4, 8, ' 12-noviembre-2024', ' 15:51', '15:52', 0.0167),
+(5, 8, ' 17-noviembre-2024', ' 15:29', '15:33', 0.0666667),
+(6, 8, ' 17-noviembre-2024', ' 16:01', '16:02', 0.0166667),
+(7, 8, ' 17-noviembre-2024', ' 16:02', '16:07', 0.0833333),
+(8, 8, ' 17-noviembre-2024', ' 17:40', '18:00', 0.333333),
+(9, 8, '17-noviembre-2024', '18:20', '', 0);
 
 -- --------------------------------------------------------
 
@@ -84,36 +91,37 @@ CREATE TABLE `aulas` (
   `id_aula` int(5) NOT NULL,
   `aula` varchar(5) DEFAULT NULL,
   `tipo` varchar(50) DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL
+  `estado` varchar(255) DEFAULT NULL,
+  `clima` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `aulas`
 --
 
-INSERT INTO `aulas` (`id_aula`, `aula`, `tipo`, `estado`) VALUES
-(1, 'H1', 'Laboratorio', 'cerrado'),
-(2, 'H2', 'Laboratorio', NULL),
-(3, 'H3', 'Salon', NULL),
-(4, 'H4', 'Salon', NULL),
-(5, 'H5', 'Salon', NULL),
-(6, 'H6', 'Salon', NULL),
-(7, 'H7', 'Laboratotrio', NULL),
-(8, 'H8', 'Laboratorio', NULL),
-(9, 'H9', 'Salon', NULL),
-(10, 'H10', 'Salon', 'cerrado'),
-(11, 'H11', 'Salon', NULL),
-(12, 'H12', 'Salon', 'cerrado'),
-(13, 'G1', 'Salon', NULL),
-(14, 'G2', 'Salon', NULL),
-(15, 'G3', 'Salon', NULL),
-(16, 'G4', 'Laboratotrio', NULL),
-(17, 'G5', 'Salon', NULL),
-(18, 'G6', 'Salon', NULL),
-(19, 'G7', 'Salon', NULL),
-(20, 'G8', 'Laboratotrio', NULL),
-(21, 'LCOM3', 'Laboratotrio', NULL),
-(22, 'LCOM4', 'Laboratorio', NULL);
+INSERT INTO `aulas` (`id_aula`, `aula`, `tipo`, `estado`, `clima`) VALUES
+(1, 'H1', 'Laboratorio', 'abierto', NULL),
+(2, 'H2', 'Laboratorio', 'cerrado', NULL),
+(3, 'H3', 'Salon', 'abierto', NULL),
+(4, 'H4', 'Salon', 'abierto', NULL),
+(5, 'H5', 'Salon', 'abierto', NULL),
+(6, 'H6', 'Salon', 'cerrado', NULL),
+(7, 'H7', 'Laboratotrio', 'abierto', NULL),
+(8, 'H8', 'Laboratorio', 'cerrado', NULL),
+(9, 'H9', 'Salon', 'abierto', NULL),
+(10, 'H10', 'Salon', 'cerrado', NULL),
+(11, 'H11', 'Salon', 'cerrado', NULL),
+(12, 'H12', 'Salon', 'abierto', NULL),
+(13, 'G1', 'Salon', 'cerrado', NULL),
+(14, 'G2', 'Salon', 'cerrado', NULL),
+(15, 'G3', 'Salon', 'cerrado', NULL),
+(16, 'G4', 'Laboratotrio', 'cerrado', NULL),
+(17, 'G5', 'Salon', 'cerrado', NULL),
+(18, 'G6', 'Salon', 'cerrado', NULL),
+(19, 'G7', 'Salon', 'cerrado', NULL),
+(20, 'G8', 'Laboratotrio', 'cerrado', NULL),
+(21, 'LCOM3', 'Laboratotrio', 'cerrado', NULL),
+(22, 'LCOM4', 'Laboratorio', 'abierto', NULL);
 
 -- --------------------------------------------------------
 
@@ -201,7 +209,10 @@ CREATE TABLE `martes` (
 
 INSERT INTO `martes` (`id`, `aula`, `maestro`, `clima`, `hora`) VALUES
 (1, 1, 5, 'Encendido', 7),
-(2, 1, 5, 'Encendido', 8);
+(2, 1, 5, 'Encendido', 8),
+(3, 5, 1, '', 15),
+(4, 6, 1, '', 12),
+(5, 6, 1, '', 13);
 
 -- --------------------------------------------------------
 
@@ -375,7 +386,7 @@ ALTER TABLE `alumnos`
 -- AUTO_INCREMENT de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  MODIFY `id_asistencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_asistencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `aulas`
@@ -405,7 +416,7 @@ ALTER TABLE `lunes`
 -- AUTO_INCREMENT de la tabla `martes`
 --
 ALTER TABLE `martes`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `miercoles`

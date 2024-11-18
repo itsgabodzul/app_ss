@@ -275,3 +275,26 @@ body {
     font-weight: bold;
     font-size: 45px;
 }
+
+/*Clock*/
+.clock {
+    background:var(--color2);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    margin-right: 150px;
+    margin-top: 10px;
+    float: right;
+  }
+  .clock p{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #time {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }

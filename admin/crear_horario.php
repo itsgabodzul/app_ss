@@ -28,8 +28,8 @@ $id_admin = $_SESSION["id_admin"];
                      <div class="campos">
                         <form action="guardar_horario.php" method="post">
                             <div>
-                                <p class="text_input">Aula:</p>
-                                <select name="aula" require>
+                                <p class="text_input">Aula *:</p>
+                                <select name="aula" required>
                                     <option value="0">Elegir aula</option>
                                     <?php require "conexion.php";
                                     $todos_datos = "SELECT * FROM aulas ORDER BY id_aula ASC";
@@ -41,8 +41,8 @@ $id_admin = $_SESSION["id_admin"];
                                 </select>
                             </div>
                             <div>
-                                <p class="text_input">Docente:</p>
-                                <select name="docente" require>
+                                <p class="text_input">Docente *:</p>
+                                <select name="docente" required>
                                     <option value="0">Elegir un docente</option>
                                     <?php require "conexion.php";
                                     $todos_datos = "SELECT * FROM docentes ORDER BY id_docente ASC";
@@ -54,8 +54,8 @@ $id_admin = $_SESSION["id_admin"];
                                 </select>
                             </div>
                             <div>
-                                <p class="text_input">Día:</p>
-                                <select  name="dia">
+                                <p class="text_input">Día *:</p>
+                                <select  name="dia" required>
                                     <option value="">Seleccione</option>
                                     <option value="lunes">Lunes</option>
                                     <option value="martes">Martes</option>
@@ -65,7 +65,7 @@ $id_admin = $_SESSION["id_admin"];
                                 </select>
                             </div>
                             <div>
-                                <p class="text_input">Hora Inicio:</p>
+                                <p class="text_input">Hora Inicio *:</p>
                                 <select name="horario_inicio" required>
                                     <option value="">Seleccione</option>
                                     <option value="7">7</option>
@@ -86,7 +86,7 @@ $id_admin = $_SESSION["id_admin"];
                                 </select>
                             </div>
                             <div>
-                                <p class="text_input">Hora Fin:</p>
+                                <p class="text_input">Hora Fin *:</p>
                                 <select name="horario_fin" required>
                                     <option value="">Seleccione</option>
                                     <option value="7">7</option>
@@ -106,14 +106,14 @@ $id_admin = $_SESSION["id_admin"];
                                     <option value="21">21</option>
                                 </select>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <p class="text_input">Clima:</p>
                                 <select name="clima" require>
                                     <option value="">Elegir opcion</option>
                                     <option value="Encendido">ON</option>
                                     <option value="Apagado">OFF</option>
                                 </select>
-                            </div>
+                            </div> -->
                         <button  type="submit" class="">Guardar</button>
                     </form>
                 </div>

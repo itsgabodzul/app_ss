@@ -58,10 +58,15 @@ $alumno = $_SESSION["id_user"];
         </nav>
     </header>
     <main class="admin-main">
+            <!-- <div class="clock">
+                    <p><?php echo $dia?> de <?php echo  $mes?> del <?php echo $anio?></p>
+                    <div id="time">00:00:00</div>
+            </div> -->
         <section class="dashboard-overview">
             <h1 class="tt_paginas">Registro de Asistencia al Servicio Social</h1>
-            <br>
             <div class="dashboard-widgets">
+                <!-- <br><br> -->
+                <br>
                 <div class="widget_index1">
                 <table class="tablaspanel">
                         <tr>
@@ -86,11 +91,42 @@ $alumno = $_SESSION["id_user"];
                     </table>
                 </div>
                 <div class="widget_index">
-                    <h3>Hora Actual:</h3>
+                    <!-- <h3>Hora Actual:</h3>
                     <p class="horas"><?php echo date('H:i');?></p>
-                    <br><br>
-                    <!-- <h3>Horas Acumuladas</h3><br>
-                    <p class="horas">09:00</p> -->
+                    <br> -->
+                    <h3>Registro de Hoy</h3>
+                    <?php require "admin/conexion.php";
+                    $fecha = $dia.'-'.$mes.'-'.$anio;
+                    $acum = "SELECT SUM(acumuldas) AS total_acumuladas FROM asistencias WHERE fecha LIKE '%$fecha%' AND alumno = $alumno";
+                    $resultado_acum = mysqli_query($conectar, $acum);
+                    $fila_acum = mysqli_fetch_assoc($resultado_acum);
+
+                    if ($fila_acum['total_acumuladas'] !== null) {
+                        $horas_hoy = $fila_acum['total_acumuladas'];
+                    } else {
+                        $horas_hoy = 0;
+                    }
+                    $total_horas_hoy = floor($horas_hoy);
+                    $total_minutos_hoy = round(($horas_hoy - $total_horas_hoy) * 60);
+                    $formato_time_hoy = sprintf("%02d:%02d", $total_horas_hoy, $total_minutos_hoy);?>
+                    <p class="horas"><?php echo $formato_time_hoy?></p>
+                    <br>
+                    <h3>Total de horas: </h3>
+                    <?php require "admin/conexion.php";
+                    $fecha = $dia.'-'.$mes.'-'.$anio;
+                    $acum = "SELECT SUM(acumuldas) AS total_acumuladas FROM asistencias WHERE alumno = $alumno";
+                    $resultado_acum = mysqli_query($conectar, $acum);
+                    $fila_acum = mysqli_fetch_assoc($resultado_acum);
+
+                    if ($fila_acum['total_acumuladas'] !== null) {
+                        $horas_acumuladas = $fila_acum['total_acumuladas'];
+                    } else {
+                        $horas_acumuladas = 0;
+                    }
+                    $total_horas = floor($horas_acumuladas);
+                    $total_minutos = round(($horas_acumuladas - $total_horas) * 60);
+                    $formato_time = sprintf("%02d:%02d", $total_horas, $total_minutos);?>
+                    <p class="horas"><?php echo $formato_time?></p>
                     <br><br>
                     <form action="guardar_asistencia.php" method="post" class="contador">
                         <input type="hidden" name="alumno" value="<?php echo $alumno?>">
@@ -115,6 +151,10 @@ $alumno = $_SESSION["id_user"];
                         <button type="submit">Detener</button>
                     </form>
                 </div>
+                <script src="clock.js"></script>
+                <!-- <div class="widget_index">
+                    
+                </div> -->
             </div>
         </section>
     </main>

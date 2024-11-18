@@ -50,7 +50,6 @@ $id_admin = $_SESSION["id_admin"];
                             <th>TIPO</th>
                             <th>DOCENTE</th>
                             <th>HORA</th>
-                            <th>CLIMA</th>
                             <th colspan="2"></th>
                         </tr>
                         <?php date_default_timezone_set('America/Mexico_City');
@@ -63,8 +62,8 @@ $id_admin = $_SESSION["id_admin"];
                                 'Saturday' => 'sabado',
                                 'Sunday' => 'domingo'
                             );
-                            // $dia_semana = 'lunes';
-                            $dia_semana = $dia_semana_ingles[date("l")];
+                            $dia_semana = 'lunes';
+                            // $dia_semana = $dia_semana_ingles[date("l")];
                             ?>
                         <?php require "conexion.php";
                         if (isset($_GET['buscar']) and $_GET['busca_docente']) {
@@ -90,8 +89,6 @@ $id_admin = $_SESSION["id_admin"];
                                 <td><?php echo $fila['tipo']; ?></td>
                                 <td><?php echo $fila['nombres']; ?> <?php echo $fila['apellidos']; ?></td>
                                 <td><?php echo $fila['hora']; ?></td>
-                                <td><?php echo $fila['clima']; ?></td>
-                                
                                 <!-- <td><a class="ver_u" href="ver_aula.php?id=<?php echo $fila['id_aula']; ?>"><i class="fas fa-eye"></i></a></td> -->
                                 <!-- <td><a class="editar" href="editar_aula.php?id=<?php echo $fila['id_aula']; ?>"><i class="fas fa-spell-check"></i></a></td> -->
                                 <td><a class="eliminar" href="#" onClick="validar('eliminar_aula.php?id=<?php echo $fila['id_aula']; ?>')"><i class="fas fa-trash-alt"></i></a></td>

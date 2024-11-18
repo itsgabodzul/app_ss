@@ -102,7 +102,7 @@ $id_user = $_SESSION['id_user'];
                                                     <button type="submit">Cerrar el <?php echo $fila_actualizar["aula"]?></button>
                                                 </form>
                                             <?php } else {?>
-                                                <form action="actualizar_estado.php " class="cerrado">
+                                                <form action="actualizar_estado.php " class="cerrado" method="post">
                                                     <input type="hidden" name="id_aula" value="<?php echo $fila_actualizar["id_aula"]?>">
                                                     <input type="hidden" name="aula" value="<?php echo $fila_actualizar["aula"]?>">
                                                     <input type="hidden" name="tipo" value="<?php echo $fila_actualizar["tipo"]?>">

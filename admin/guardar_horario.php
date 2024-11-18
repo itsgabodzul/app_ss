@@ -5,10 +5,20 @@ require "conexion.php";
 $dia = $_POST["dia"];
 $aula = $_POST["aula"];
 $docente = $_POST["docente"];
-$clima = $_POST["clima"];
 $hora_inicio = $_POST["horario_inicio"];
 $hora_fin = $_POST["horario_fin"];
 $n = ($hora_fin - $hora_inicio);
+
+//Validar horario
+$horasincorrecta = ($hora_fin - $hora_inicio);
+if ($horasincorrecta<=0){
+  echo '
+  <script>
+    alert("La Hora Fin es incorrecta");
+    location.href = "crear_horario.php";
+  </script>';
+  exit();
+}
 
 //Validar horas
 $verficar_horas = mysqli_query($conectar, "SELECT * FROM $dia WHERE (hora = '$hora_inicio' OR hora = '$hora_fin') AND aula = $aula");
