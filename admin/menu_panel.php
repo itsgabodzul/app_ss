@@ -9,8 +9,8 @@
         <a href="salones.php"><i class="fas fa-clock"></i> - Horarios</a><br>
         <a href="docentes.php"><i class="fas fa-chalkboard-teacher"></i> - Docentes</a><br>
         <a href="usuarios2.php"><i class="fas fa-users"></i> - Alumnos</a><br>
-        <a href="tareas_p.php"><i class="fas fa-tasks"></i> - Tareas</a><br>
-        <!-- <a href="usuarios.php"><i class="fas fa-user"></i> - Usuarios</a> -->
+        <a href="tareas_p.php"><i class="fas fa-newspaper"></i> - Tareas</a><br>
+        <a href="asistencias.php"><i class="fas fa-list-ul"></i> - Asistencias</a><br>
         <?php if ($id_admin == 1) {
         echo '<a href="usuarios.php"><i class="fas fa-user"></i> - Usuarios</a>';
         }?>

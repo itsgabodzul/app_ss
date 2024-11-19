@@ -291,3 +291,12 @@ a[disabled] {
     font-weight: bold;
     border: none;
 }
+
+.alert{
+    color: red;
+    font-weight: bold;
+}
+.new_horas{
+    text-align: center;
+    border: red solid;
+}

@@ -82,14 +82,12 @@ $id_admin = $_SESSION["id_admin"];
                                     <option value="18">18</option>
                                     <option value="19">19</option>
                                     <option value="20">20</option>
-                                    <option value="21">21</option>
                                 </select>
                             </div>
                             <div>
                                 <p class="text_input">Hora Fin *:</p>
                                 <select name="horario_fin" required>
                                     <option value="">Seleccione</option>
-                                    <option value="7">7</option>
                                     <option value="8">8</option>
                                     <option value="9">9</option>
                                     <option value="10">10</option>

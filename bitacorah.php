@@ -55,8 +55,8 @@ $id_user = $_SESSION['id_user'];
                             ?>
                         <tr>
                             <th class="table_tt">Aula / Horario</th>
-                            <?php for ($i=6; $i<21; $i++){?>
-                            <th class="table_tt"><?php echo $i + 1; ?></th>
+                            <?php for ($i=6; $i<20; $i++){?>
+                            <th class="table_tt"><?php echo $i + 1; ?> a <?php echo $i + 2; ?></th>
                             <?php }?>
                         </tr>
                         <?php require "admin/conexion.php";

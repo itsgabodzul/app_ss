@@ -19,7 +19,15 @@ if ($horasincorrecta<=0){
   </script>';
   exit();
 }
-
+if($horasincorrecta > 3){
+  echo '
+  <script>
+    alert("Haz superado el limte de horas por clase");
+    location.href = "crear_horario.php";
+  </script>';
+  exit();
+}
+$maximohoras = 
 //Validar horas
 $verficar_horas = mysqli_query($conectar, "SELECT * FROM $dia WHERE (hora = '$hora_inicio' OR hora = '$hora_fin') AND aula = $aula");
 if (mysqli_num_rows($verficar_horas)> 0){
@@ -40,24 +48,24 @@ if (mysqli_num_rows($verificar_maestro) > 0) {
   exit();
 }
 if ($n > 1){
-  $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '$clima', '$hora_inicio')";
+  $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '', '$hora_inicio')";
   $query = mysqli_query($conectar, $insertar);
   $horas = $hora_inicio;
   for ($i = 1; $i < $n; $i++){
     $horas = ($horas+1);
-    $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '$clima', '$horas')";
+    $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '', '$horas')";
     $query = mysqli_query($conectar, $insertar);
   }
 }
 else{
-  $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '$clima', '$hora_inicio')";
+  $insertar = "INSERT INTO $dia (aula, maestro, clima, hora) VALUES ('$aula', '$docente', '', '$hora_inicio')";
   $query = mysqli_query($conectar, $insertar);
 }
 
 if($query){
   echo "<script>
   alert('Clase agregada correctamente');
-  location.href='salones.php'
+  location.href='crear_horario.php';
   </script>";
 }
 else{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2024 a las 01:27:30
+-- Tiempo de generación: 18-11-2024 a las 22:05:52
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -49,7 +49,8 @@ INSERT INTO `alumnos` (`id`, `nombres`, `apellidos`, `email`, `contrasena`, `mat
 (8, 'Jonathan', 'Heredia Cardenas', 'LE20080123@merida.tecnm.mx', '$2y$10$7H4BHxdv65hSh.JlN27hKumO6LAKus4qJpJUgQ5sxYBct0AhDVfFy', 'E20080123', 'Ingenieria en Sistemas Computacionales', 'masculino', 9, 'estudiante'),
 (9, 'Juan', 'Carrillo Torres', 'LE20080895@merida.tecnm.mx', '$2y$10$pvVLLZJ4DtCQ9Z3mkH7q1uCwZ2aos0hJ1QLofUxcEJV6gYtfYJLIG', 'E20080895', 'Ing Ambiental', 'masculino', 9, 'estudiante'),
 (10, 'Aldo', 'Espadas', 'LE20080485@merida.tecnm.mx', '$2y$10$5ha6A3zDW6TX10cBUeXOFef/cJ6SbAAffSD.JX4L3s7RfJi6/HObG', 'E80200485', 'Ingenieria en Sistemas Computacionales', 'masculino', 11, 'estudiante'),
-(11, 'prueba todos', 'aasas', 'LE20080895@merida.tecnm.mx', '$2y$10$1HtyLQgZxZidLSXXEIZKbOdK8/5a2/Hip4iy4S6Oc2cwail4OqPji', 'E20080927', 'Ing Ambiental', 'masculino', 11, 'estudiante');
+(11, 'prueba todos', 'aasas', 'LE20080895@merida.tecnm.mx', '$2y$10$1HtyLQgZxZidLSXXEIZKbOdK8/5a2/Hip4iy4S6Oc2cwail4OqPji', 'E20080927', 'Ing Ambiental', 'masculino', 11, 'estudiante'),
+(12, 'Marco ', 'Avila Perez', 'LE21080361@merida.tecnm.mx', '$2y$10$BEW3M1C7ZAA5qgAKr.GZFu8pHNnWJJEjpJyUyD05nv1L3h4t7XzRS', 'E21080361', 'Sistemas', 'masculino', 8, 'estudiante');
 
 -- --------------------------------------------------------
 
@@ -71,15 +72,34 @@ CREATE TABLE `asistencias` (
 --
 
 INSERT INTO `asistencias` (`id_asistencia`, `alumno`, `fecha`, `hora_inicio`, `hora_fin`, `acumuldas`) VALUES
-(1, 8, ' 11-noviembre-2024', ' 21:21', '21:42', 0.35),
-(2, 8, ' 11-noviembre-2024', ' 21:49', '21:59', 0.1667),
-(3, 8, ' 12-noviembre-2024', ' 14:14', '14:14', 0.0167),
-(4, 8, ' 12-noviembre-2024', ' 15:51', '15:52', 0.0167),
-(5, 8, ' 17-noviembre-2024', ' 15:29', '15:33', 0.0666667),
-(6, 8, ' 17-noviembre-2024', ' 16:01', '16:02', 0.0166667),
-(7, 8, ' 17-noviembre-2024', ' 16:02', '16:07', 0.0833333),
-(8, 8, ' 17-noviembre-2024', ' 17:40', '18:00', 0.333333),
-(9, 8, '17-noviembre-2024', '18:20', '', 0);
+(1, 8, ' 11-11-2024', ' 21:21', '21:42', 0.35),
+(2, 8, ' 11-11-2024', ' 21:49', '21:59', 0.1667),
+(3, 8, ' 12-11-2024', ' 14:14', '14:14', 0.0167),
+(4, 8, ' 12-11-2024', ' 15:51', '15:52', 0.0167),
+(5, 8, ' 17-11-2024', ' 15:29', '15:33', 0.0666667),
+(6, 8, ' 17-11-2024', ' 16:01', '16:02', 0.0166667),
+(7, 8, ' 17-11-2024', ' 16:02', '16:07', 0.0833333),
+(8, 8, ' 17-11-2024', ' 17:40', '18:00', 0.333333),
+(10, 8, ' 18-11-2024', ' 09:19', '09:20', 0.0166667),
+(11, 8, ' 18-11-2024', ' 09:41', '09:49', 0.133333),
+(12, 8, ' 18-11-2024', ' 09:48', '09:49', 0.0166667),
+(13, 8, ' 18-11-2024', ' 09:49', '09:49', 0),
+(14, 8, ' 18-11-2024', ' 09:49', '09:49', 0),
+(15, 8, ' 18-11-2024', ' 09:49', '09:49', 0),
+(16, 8, ' 18-11-2024', ' 09:50', '09:53', 0.05),
+(17, 8, ' 18-11-2024', ' 09:53', '09:53', 0),
+(18, 8, ' 18-11-2024', ' 09:53', '09:53', 0),
+(19, 8, ' 18-11-2024', ' 09:53', '09:53', 0),
+(20, 8, ' 18-11-2024', ' 10:08', '10:29', 0.35),
+(21, 8, ' 18-11-2024', ' 11:09', '11:39', 0.5),
+(22, 8, ' 18-11-2024', ' 11:53', '11:53', 0),
+(23, 8, ' 18-11-2024', ' 11:53', '12:17', 0.4),
+(24, 12, ' 18-11-2024', ' 14:29', '14:49', 0.333333),
+(25, 12, ' 18-11-2024', ' 14:49', '14:50', 0.0166667),
+(26, 12, ' 18-11-2024', ' 14:49', '14:50', 0.0166667),
+(27, 8, ' 18-11-2024', ' 14:53', '14:54', 0.0166667),
+(28, 12, ' 18-11-2024', ' 14:55', '14:55', 0),
+(29, 12, ' 18-11-2024', ' 14:55', '14:55', 0);
 
 -- --------------------------------------------------------
 
@@ -104,7 +124,7 @@ INSERT INTO `aulas` (`id_aula`, `aula`, `tipo`, `estado`, `clima`) VALUES
 (2, 'H2', 'Laboratorio', 'cerrado', NULL),
 (3, 'H3', 'Salon', 'abierto', NULL),
 (4, 'H4', 'Salon', 'abierto', NULL),
-(5, 'H5', 'Salon', 'abierto', NULL),
+(5, 'H5', 'Salon', 'cerrado', NULL),
 (6, 'H6', 'Salon', 'cerrado', NULL),
 (7, 'H7', 'Laboratotrio', 'abierto', NULL),
 (8, 'H8', 'Laboratorio', 'cerrado', NULL),
@@ -186,8 +206,15 @@ INSERT INTO `lunes` (`id`, `aula`, `maestro`, `clima`, `hora`) VALUES
 (7, 5, 1, 'Apagado', 16),
 (8, 5, 1, 'Apagado', 17),
 (9, 5, 1, 'Apagado', 18),
-(10, 14, 5, 'Encendido', 19),
-(11, 14, 5, 'Encendido', 20);
+(11, 14, 5, 'Encendido', 20),
+(12, 13, 1, '', 7),
+(13, 13, 1, '', 8),
+(14, 3, 5, '', 15),
+(15, 3, 5, '', 16),
+(16, 3, 5, '', 17),
+(17, 4, 4, '', 17),
+(18, 4, 4, '', 18),
+(19, 4, 4, '', 19);
 
 -- --------------------------------------------------------
 
@@ -227,6 +254,14 @@ CREATE TABLE `miercoles` (
   `clima` varchar(255) DEFAULT NULL,
   `hora` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `miercoles`
+--
+
+INSERT INTO `miercoles` (`id`, `aula`, `maestro`, `clima`, `hora`) VALUES
+(1, 3, 1, '', 18),
+(2, 3, 1, '', 19);
 
 -- --------------------------------------------------------
 
@@ -380,13 +415,13 @@ ALTER TABLE `viernes`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  MODIFY `id_asistencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_asistencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `aulas`
@@ -410,7 +445,7 @@ ALTER TABLE `jueves`
 -- AUTO_INCREMENT de la tabla `lunes`
 --
 ALTER TABLE `lunes`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `martes`
@@ -422,7 +457,7 @@ ALTER TABLE `martes`
 -- AUTO_INCREMENT de la tabla `miercoles`
 --
 ALTER TABLE `miercoles`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tareas`
