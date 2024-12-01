@@ -14,41 +14,59 @@
         <div class="campos">
             <form action="guardar_usuario2.php" method="post">
                 <div>
-                    <p class="tt_form">Nombre(s):</p>
-                    <input type="text" name="nombres" placeholder="Nombre(s)" required>
+                    <p class="tt_form">Nombre(s): <span class="obligacion">*</span></p> 
+                    <input type="text" name="nombres" placeholder="Nombre(s)" required  pattern="^(?!\s)[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" 
+                    title="El nombre no debe iniciar con espacios ni contener números.">
                 </div>
                 <div>
-                    <p class="tt_form">Apellidos:</p>
-                    <input type="text" name="apellidos" placeholder="Apellidos" required>
+                    <p class="tt_form">Apellidos: <span class="obligacion">*</span></p>
+                    <input type="text" name="apellidos" placeholder="Apellidos" required  pattern="^(?!\s)[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" 
+                    title="No debe iniciar con espacios ni contener números.">
                 </div>
                 <div>
-                    <p class="tt_form">Matricula (Inicia con E):</p>
-                    <input type="text" name="matricula" required placeholder="Matricula" required>
+                    <p class="tt_form">Matricula (Inicia con E): <span class="obligacion">*</span></p>
+                    <input type="text" name="matricula" placeholder="Matricula" required pattern="E2\d{7}" title="Debe de iniciar con una E">
                 </div>
                 <div>
-                    <p class="tt_form">Correo Institucional:</p>
-                    <input type="text" name="email" placeholder="Correo" required>
+                    <p class="tt_form">Correo Institucional: <span class="obligacion">*</span></p>
+                    <input type="text" name="email" placeholder="Correo" required pattern="[a-zA-Z0-9._%+-]+@merida\.tecnm\.mx" 
+                    title="El correo debe terminar en @merida.tecnm.mx">
                 </div>
                 <div >
-                <p class="tt_form">Contraseña:</p>
-                    <input type="text" name="contrasena" placeholder="Contraseña" required>
+                <p class="tt_form">Contraseña: <span class="obligacion">*</span></p>
+                    <input type="password" name="contrasena" placeholder="Contraseña" required id="password"  minlength="8" 
+                    title="La contraseña debe tener al menos 8 caracteres."><button type="button" id="togglePassword">Mostrar</button>
                 </div>
                 <div>
-                    <p class="tt_form">Carrera:</p>
-                    <input type="text" name="carrera" required placeholder="Carrera" required>
+                    <p class="tt_form">Carrera: <span class="obligacion">*</span></p>
+                    <select name="carrera" id="carreras" required>
+                        <option value="">Selecciona una carrera</option>
+                        <option value="Licenciatura en Administración">Licenciatura en Administración</option>
+                        <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
+                        <option value="Ingeniería Bioquímica">Ingeniería Bioquímica</option>
+                        <option value="Ingeniería Biomédica">Ingeniería Biomédica</option>
+                        <option value="Ingeniería Civil">Ingeniería Civil</option>
+                        <option value="Ingeniería Eléctrica">Ingeniería Eléctrica</option>
+                        <option value="Ingeniería Electrónica">Ingeniería Electrónica</option>
+                        <option value="Ingeniería en Gestión Empresarial">Ingeniería en Gestión Empresarial</option>
+                        <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                        <option value="Ingeniería Mecánica">Ingeniería Mecánica</option>
+                        <option value="Ingeniería en Sistemas Computacionales">Ingeniería en Sistemas Computacionales</option>
+                        <option value="Ingeniería Química">Ingeniería Química</option>
+                    </select>
                 </div>
                 <div class="select">
                     <div>
-                        <p class="tt_form">Sexo:</p>
-                        <select name="sexo" id="">
+                        <p class="tt_form">Sexo: <span class="obligacion">*</span></p>
+                        <select name="sexo" id="" required>
                             <option value="0">Seleccione</option>
                             <option value="masculino">Masculino</option>
                             <option value="femenino">Femenino</option>
                         </select>
                     </div>
                     <div>
-                        <p class="tt_form">Ingreso:</p>
-                        <select name="ingreso" id="">
+                        <p class="tt_form">Ingreso: <span class="obligacion">*</span></p>
+                        <select name="ingreso" id="" required>
                             <option value="0">Seleccione</option>
                             <option value="7">Septimo</option>
                             <option value="8">Octavo</option>
@@ -70,5 +88,19 @@
         </div>
     </div>
     <div></div>
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const password = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+            if (password.type === "password") {
+            password.type = "text";
+            togglePassword.textContent = "Ocultar";
+            } else {
+            password.type = "password";
+            togglePassword.textContent = "Mostrar";
+            }
+        });
+    </script>
 </body>
 </html>

@@ -10,8 +10,10 @@ $id_user = $_SESSION['id_user'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Sistema de Gestión</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="admin_panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="admin_panel.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <header class="admin-header">
@@ -23,7 +25,7 @@ $id_user = $_SESSION['id_user'];
                 <li><a href="admin_panel.php" class="selected">Inicio</a></li>
                 <li><a href="bitacorat.php" >Bitácora</a></li>
                 <li><a href="horas_asistencias.php">Horas y Asistencias</a></li>
-                <li><a href="" class="noti"><i class="fas fa-bell"></i></a></li>
+                <?php include "notificaciones.php"?>
                 <li><a href="salir.php" class="salir"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </nav>
@@ -33,6 +35,7 @@ $id_user = $_SESSION['id_user'];
             <h1 class="tt_paginas">¡Bienvenido <?php echo $usuario?>!</h1>
             <h3 class="st_paginas">Aqui tienes un resumen de tus actividades</h3>
             <br>
+            <button onclick="mostrarAlerta()">Mostrar Alerta</button>
             <div class="dashboard-widgets">
                 <div class="widget_index1">
                     <?php 
@@ -100,7 +103,27 @@ $id_user = $_SESSION['id_user'];
         </section>
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
 <script src="validar.js"></script>
+<script src="alert.js"></script>
+<script>
+    function toggleIcon() {
+      const icon = document.getElementById('icon');
+
+      // Verifica el ícono actual y alterna
+      if (icon.classList.contains('far')) {
+        icon.classList.remove('far', 'fa-bell'); // Remueve clase de ícono actual
+        icon.classList.add('fas', 'fa-bell');   // Agrega nueva clase de ícono
+      } else {
+        icon.classList.remove('fas', 'fa-bell');
+        icon.classList.add('far', 'fa-bell');
+      }
+    }
+  </script>
 </html>
 
 

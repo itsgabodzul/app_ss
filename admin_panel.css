@@ -200,7 +200,30 @@ body {
 .noti i{
     color: #c90;
 }
-
+.btn-noti{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 25px;
+}
+.title_noti{
+    text-align: center;
+    font-weight: bold;
+}
+.bg-danger{
+    border-radius: 100%;
+    color: white;
+    font-size: 12px;
+    float: right;
+    padding: 5px 8px;
+}
+.noti{
+    border: none;
+}
+.nav-item{
+    border: wheat solid;
+    width: 50px;
+}
 .btn_ss{
     background-color: green;
     color: white;
@@ -324,4 +347,23 @@ body {
 .todos_f{
     width: 250px;
     display: inline-block;
+}
+.obligacion{
+    font-weight: bold;
+    color: red;
+}
+.dropdown{
+    width: 60px;
+    display: inline-block;
+}
+.new_tarea{
+    color: green;
+    font-weight: bold;
+}
+.fecha_tarea{
+    font-size: 12px;
+    background-color: #999999;
+    padding: 2px;
+    color: white;
+    float: right;
 }

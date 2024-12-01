@@ -300,3 +300,7 @@ a[disabled] {
     text-align: center;
     border: red solid;
 }
+.obligacion{
+    font-weight: bold;
+    color: red;
+}

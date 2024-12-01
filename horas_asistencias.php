@@ -53,7 +53,6 @@ $alumno = $_SESSION["id_user"];
                 <li><a href="admin_panel.php">Inicio</a></li>
                 <li><a href="bitacorat.php">Bitácora</a></li>
                 <li><a href="horas_asistencias.php" class="selected">Horas y Asistencias</a></li>
-                <li><a href="" class="noti"><i class="fas fa-bell"></i></a></li>
                 <li><a href="salir.php" class="salir"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </nav>
@@ -113,6 +112,7 @@ $alumno = $_SESSION["id_user"];
                                         </td>
                                         <td><?php echo $fila['hora_inicio']; ?></td>
                                         <td><?php echo $fila['hora_fin']; ?></td>
+                                        <?php?>
                                     </tr>
                                 <?php }?>
                         <?php } else { ?>
