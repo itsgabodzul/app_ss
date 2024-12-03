@@ -49,8 +49,8 @@ $id_user = $_SESSION['id_user'];
                                 'Saturday' => 'sabado',
                                 'Sunday' => 'domingo'
                             );
-                            $dia_semana = 'lunes';
-                            // $dia_semana = $dia_semana_ingles[date("l")];
+                            // $dia_semana = 'martes';
+                            $dia_semana = $dia_semana_ingles[date("l")];
                             ?>
                         <tr>
                             <th class="table_tt">Aula / Horario</th>

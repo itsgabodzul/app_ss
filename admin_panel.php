@@ -35,7 +35,7 @@ $id_user = $_SESSION['id_user'];
             <h1 class="tt_paginas">¡Bienvenido <?php echo $usuario?>!</h1>
             <h3 class="st_paginas">Aqui tienes un resumen de tus actividades</h3>
             <br>
-            <button onclick="mostrarAlerta()">Mostrar Alerta</button>
+            <!-- <button onclick="mostrarAlerta()">Mostrar Alerta</button> -->
             <div class="dashboard-widgets">
                 <div class="widget_index1">
                     <?php 

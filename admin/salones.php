@@ -62,8 +62,8 @@ $id_admin = $_SESSION["id_admin"];
                                 'Saturday' => 'sabado',
                                 'Sunday' => 'domingo'
                             );
-                            $dia_semana = 'lunes';
-                            // $dia_semana = $dia_semana_ingles[date("l")];
+                            // $dia_semana = 'martes';
+                            $dia_semana = $dia_semana_ingles[date("l")];
                             ?>
                         <?php require "conexion.php";
                         if (isset($_GET['buscar']) and $_GET['busca_docente']) {

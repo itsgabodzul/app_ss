@@ -11,7 +11,7 @@ date_default_timezone_set('America/Mexico_City');
     'Friday' => 'viernes',
     'Saturday' => 'sabado',
     'Sunday' => 'domingo');
-    // $dia_semana = 'lunes';
+    // $dia_semana = 'martes';
     $dia_semana = $dia_semana_ingles[date("l")];
 
 

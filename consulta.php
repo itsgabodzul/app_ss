@@ -33,3 +33,5 @@ for ($aula_id = 1; $aula_id <= 22; $aula_id++) {
     echo "Horas libres para el aula $aula_id: " . implode(", ", $horas_libres) . "<br>";
 }
 ?>
+
+
